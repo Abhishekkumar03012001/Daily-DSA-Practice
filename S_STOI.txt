@@ -1,0 +1,76 @@
+#1st push
+
+class Solution {
+public:
+    int myAtoi(string s) {
+             
+          int n= s.length();
+      
+          int maxi = INT_MAX;
+          int mini = INT_MIN;
+          int i=0,pos=0,neg=0;
+         double ans=0;
+          while(i<n)
+          {
+              if(s[i]==' ')
+              i++;
+
+              else 
+              break;
+          }
+
+            while(i<n)
+          {
+              if(s[i]=='+')
+              {
+                  i++;
+                  pos++;
+              }
+              
+              else if(s[i]=='-')
+              {
+                  i++;
+                  neg++;
+              }
+              else 
+              break;
+          }
+   
+                while(i<n)
+                {
+
+                    if(s[i] >='0' && s[i] <= '9' )
+                    {
+                        // ans +=max (maxi,(10*ans + (s[i]-'0')));
+                        ans = ans *10 + (s[i]-48);   // this works and s[i]- '0' works too
+                        
+                        i++;
+                    }
+                    else if (s[i] <'0' || s[i]>'9')
+                    {
+                        break;
+                    }
+                }
+                
+                if(pos>0 && neg >0)
+               return  ans= 0; 
+                   if(pos>1 || neg>1)
+                      return ans=0;
+
+                 if(neg==1 && pos==0)
+                    ans= -1*ans;
+                    
+                    if(ans>INT_MAX)
+                    ans= INT_MAX;
+
+                    else if (ans<INT_MIN)
+                    ans= INT_MIN;
+                  
+                
+
+                     return int(ans);
+
+    }
+
+    
+};
