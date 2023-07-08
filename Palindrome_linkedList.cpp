@@ -12,6 +12,9 @@ palindrome
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+
+
+//code with approach-1//
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
@@ -40,7 +43,7 @@ public:
 
 
 
-
+//code with approach-2//
 class Solution {
 private:
 ListNode* reverse(ListNode* head)
